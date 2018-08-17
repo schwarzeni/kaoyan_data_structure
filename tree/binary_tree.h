@@ -70,6 +70,28 @@ void CreateANewTree(BiTree &t) {
 }
 
 /**
+ * 2018/8/17
+ * 创建一棵完全二叉树
+ */
+void CreateACompleteTree(BiTree &t) {
+  BiTNode *node1 = nullptr;
+  BiTNode *node2 = nullptr;
+  BiTNode *node3 = nullptr;
+
+  CreateNewNode(node3, 6, node1, node2);
+
+  CreateNewNode(node1, 1, nullptr, nullptr);
+  CreateNewNode(node2, 4, node3, node1);
+  CreateNewNode(node1, 5, node2, nullptr);
+  t = node1;
+
+  CreateNewNode(node1, 2, nullptr, nullptr);
+  CreateNewNode(node2, 32, nullptr, nullptr);
+  CreateNewNode(node3, 3, node1, node2);
+  t->rchild = node3;
+}
+
+/**
  *  2018/8/4
  *  访问一个节点
  */
@@ -196,7 +218,7 @@ void PostOrder2(BiTree T) {
  * 层序遍历
  */
 void LevelOrder(BiTree T) {
-  auto* queue = new BiTree[100];
+  auto *queue = new BiTree[100];
   int head = 0;
   int tail = 0;
 
@@ -210,6 +232,22 @@ void LevelOrder(BiTree T) {
     if (node->rchild != nullptr)
       queue[tail++] = node->rchild;
   }
+}
+
+/**
+ * 2018/8/12
+ * 求树的深度
+ * 求二叉树的深度
+ */
+int Depth(BiTree T) {
+  if (T == nullptr) return 0;
+
+  int leftDepth = Depth(T->lchild);
+  int rightDepth = Depth(T->rchild);
+  if (leftDepth > rightDepth)
+    return ++leftDepth;
+  else
+    return ++rightDepth;
 }
 
 }
