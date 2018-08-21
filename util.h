@@ -10,7 +10,7 @@ namespace util {
 void PrintArray(int arr[], int length) {
   for (int i = 0; i < length; i++) {
     std::cout << arr[i] << " ";
-    if (length % 15 == 0) {
+    if (i+1 % 15 == 0) {
       std::cout << std::endl;
     }
   }
