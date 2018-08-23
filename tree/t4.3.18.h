@@ -6,6 +6,6 @@
 #define KAOYAN_DATA_STRUCTURE_T4_3_18_H
 
 namespace t_4_3_18 {
-
+// 略
 }
 #endif //KAOYAN_DATA_STRUCTURE_T4_3_18_H
