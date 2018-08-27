@@ -1,5 +1,5 @@
-#include "tree/t4.3.19.h"
-#include "tree/t4.3.20.h"
+#include "graph/adjacency_matrix.h"
+#include "graph/adjacency_list.h"
 int main() {
-  t_4_3_20::Test();
+  adjacencyList::Test();
 }
